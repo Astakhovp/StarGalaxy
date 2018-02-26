@@ -7,12 +7,16 @@
 #include "GameTypes.h"
 #include "LightClasses.h"
 
-class GenerateParams : TXmlWritable
+class GenerateParams 
 {
-public:
+private:
+	TCoord MaxCoord;
+	ObjectsMaxQuantity TotalStars;
+	
 
-	TCoord* MaxCoord;
-	unsigned int Stars;
+public:
+	char* filename;
+
 	tinyxml2::XMLError SaveToFile(void);
 
 	GenerateParams(double, double);

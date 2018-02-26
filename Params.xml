@@ -1,0 +1,7 @@
+<MapGenerationParams>
+    <MapSize>
+        <MaxX>120</MaxX>
+        <MaxY>140</MaxY>
+    </MapSize>
+    <TotalStars>168</TotalStars>
+</MapGenerationParams>

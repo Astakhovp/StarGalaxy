@@ -2,6 +2,8 @@
 #include <vector>
 #include <stdlib.h>
 
+#include "TWorld.h"
+
 #include "GameTypes.h"
 #include "LightClasses.h"
 #include "WorldGeneration.h"
@@ -20,22 +22,15 @@ class AVector : public vector <T>
 {
 };
 
-class TStar
-{
-public: 
-	TCoord Coord;
-	StarSize Size, Population, Industry;
-
-
-};
-
-
 int main()
 {
 
-	GenerateParams* Params = new GenerateParams(100.0, 200.0);
+	GenerateParams* Params = new GenerateParams(120, 140);
 	Params->SaveToFile();
 	delete Params;
+
+	TWorld World;
+
 
 	//for (int i = 0; i < 3; i++)
 	//{
@@ -44,33 +39,33 @@ int main()
 
 
 
-	TCoord* Coord = new TCoord(1.0, 2.0);
+	//TCoord* Coord = new TCoord(1.0, 2.0);
 
 
-	AVector<int> Vec;
+	//AVector<int> Vec;
 	
-	Vec.resize(20);
+	//Vec.resize(20);
 
-	for (int i = 0; i < 20; i++)
-	{
-		Vec[i] = rand();
+	//for (int i = 0; i < 20; i++)
+	//{
+	//	Vec[i] = rand();
 
-	}
+	//}
 
-	for (int i = 0; i < 20; i++)
-	{
-		cout << "i=" << i + 1 << "; elem = " << Vec[i] << ";" << "\n";
-	}
+	//for (int i = 0; i < 20; i++)
+	//{
+	//	cout << "i=" << i + 1 << "; elem = " << vec[i] << ";" << "\n";
+	//}
 
 	cout << "Hello, world!\n";
 
 
-	for (int i = 0; i < 1000; i++)
-	{
-		AVector<int>* V2 = new AVector<int>;
-		V2->resize(10);
-		delete V2;
-	}
+	//for (int i = 0; i < 1000; i++)
+	//{
+	//	AVector<int>* V2 = new AVector<int>;
+	//	V2->resize(10);
+	//	delete V2;
+	//}
 
 #ifdef _DEBUG
 	_CrtDumpMemoryLeaks();

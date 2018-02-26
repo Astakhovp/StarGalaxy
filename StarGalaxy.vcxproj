@@ -114,6 +114,7 @@
     <ClCompile Include="LightClasses.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="TWorld.cpp" />
     <ClCompile Include="WorldGeneration.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +122,7 @@
     <ClInclude Include="GenerateParams.h" />
     <ClInclude Include="LightClasses.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="TWorld.h" />
     <ClInclude Include="WorldGeneration.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

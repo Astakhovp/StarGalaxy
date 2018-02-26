@@ -4,11 +4,13 @@
 Данный файл создан для определения всяких простых классов.
 */
 
+#include "GameTypes.h"
 #include "tinyxml2.h"
+#include <vector>
 
 #define StarDensity 100
 
-class TCoord
+struct TCoord
 {
 public:
 	double x, y;
@@ -19,7 +21,19 @@ public:
 class TXmlWritable
 {
 public:
-	char* filename;
 	
-	virtual tinyxml2::XMLError SaveToFile(void)=0;
+	//virtual tinyxml2::XMLError SaveToFile(void)=0;
+};
+
+struct TStar
+{
+public:
+	TCoord Coord;
+	StarSize Size, Population, Industry;
+};
+
+class TStarList : public std::vector < TStar >, TXmlWritable
+{
+
+
 };
