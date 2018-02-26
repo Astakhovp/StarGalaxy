@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/Debug
+/StarGalaxy.VC.db
+/StarGalaxy.VC.VC.opendb
