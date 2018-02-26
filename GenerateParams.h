@@ -9,13 +9,10 @@
 
 class GenerateParams 
 {
-private:
-	TCoord MaxCoord;
-	ObjectsMaxQuantity TotalStars;
-	
-
 public:
 	char* filename;
+	TCoord MaxCoord;
+	ObjectsMaxQuantity TotalStars;
 
 	tinyxml2::XMLError SaveToFile(void);
 

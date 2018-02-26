@@ -25,12 +25,16 @@ class AVector : public vector <T>
 int main()
 {
 
-	GenerateParams* Params = new GenerateParams(120, 140);
+	GenerateParams* Params = new GenerateParams(40, 40);
 	Params->SaveToFile();
-	delete Params;
 
 	TWorld World;
+	World.Generate(*Params);
+	World.SaveToFile("SaveWorld.xml");
 
+	delete Params;
+
+	World.~TWorld();
 
 	//for (int i = 0; i < 3; i++)
 	//{
