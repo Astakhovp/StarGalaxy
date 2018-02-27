@@ -17,32 +17,24 @@ TStar::TStar(TCoord GalaxySize)
 }
 
 using namespace tinyxml2;
-XMLError TStarList::WriteToXML(XMLDocument * xmlDoc, XMLNode * CurrNode)
+XMLError TStar::WriteToXML(XMLDocument *, XMLNode * ParentNode)
 {
+	return XMLError();
+}
+
+XMLError TStarList::WriteToXML(XMLDocument * xmlDoc, XMLNode * ParentNode)
+{
+
+	XMLElement * pElement = xmlDoc->NewElement("Stars");
+	ParentNode->InsertEndChild(pElement);
+
 	for (int i = 0; i < size(); i++)
 	{
 		TStar &Star = at(i);
-		//Star = at(i);
-		XMLElement * pElement = xmlDoc->NewElement("Star");
-		pElement->SetText(Star.Coord.x);
-		CurrNode->InsertEndChild(pElement);
+		XMLElement * sElement = xmlDoc->NewElement("Star");
+		sElement->SetText(100);
+		pElement->InsertEndChild(sElement);
 	}
-	
-	//// Проход по вектору с выводом значений
-	//for (int n : TSta) {
-	//	std::cout << n << '\n';
-	//}
-
-
-
-
-
-	//pRoot->InsertEndChild(pElement);
-
-	//XMLElement * pElement;
-
-
-
 
 	return XML_SUCCESS;
 }

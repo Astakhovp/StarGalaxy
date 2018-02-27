@@ -25,17 +25,18 @@ public:
 	//virtual tinyxml2::XMLError SaveToFile(void)=0;
 };
 
-class TStar
+using namespace tinyxml2;
+class TStar : public TXmlWritable
 {
 public:
 	TCoord Coord;
 	StarSize Size, Population, Industry;
 	TStar(TCoord GalaxySize);
+	XMLError WriteToXML(XMLDocument *, XMLNode * ParentNode);
 };
 
-using namespace tinyxml2;
 class TStarList : public std::vector < TStar >, TXmlWritable
 {
 public:
-	XMLError WriteToXML(XMLDocument *, XMLNode *);
+	XMLError WriteToXML(XMLDocument *, XMLNode * ParentNode);
 };
