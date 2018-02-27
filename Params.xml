@@ -1,7 +1,7 @@
 <MapGenerationParams>
     <MapSize>
-        <MaxX>40</MaxX>
-        <MaxY>40</MaxY>
+        <MaxX>33</MaxX>
+        <MaxY>33</MaxY>
     </MapSize>
-    <TotalStars>16</TotalStars>
+    <TotalStars>10</TotalStars>
 </MapGenerationParams>

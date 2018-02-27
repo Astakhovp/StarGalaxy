@@ -4,9 +4,11 @@
 Данный файл создан для определения всяких простых классов.
 */
 
+#include <vector>
+#include <string>
+#include "Util.h"
 #include "GameTypes.h"
 #include "tinyxml2.h"
-#include <vector>
 
 #define StarDensity 100
 
@@ -29,7 +31,9 @@ using namespace tinyxml2;
 class TStar : public TXmlWritable
 {
 public:
+	boost::uuids::uuid tag;
 	TCoord Coord;
+	std::string Name;
 	StarSize Size, Population, Industry;
 	TStar(TCoord GalaxySize);
 	XMLError WriteToXML(XMLDocument *, XMLNode * ParentNode);
