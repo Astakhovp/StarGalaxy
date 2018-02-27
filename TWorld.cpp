@@ -9,7 +9,7 @@ void TWorld::Generate(GenerateParams Params)
 	TotalStars = Params.TotalStars;
 	StarList.reserve(Params.TotalStars);
 
-	for (int i = 0; i < Params.TotalStars; i++)
+	for (ObjectsMaxQuantity i = 0; i < Params.TotalStars; i++)
 	{
 		TStar Star(Params.MaxCoord);
 		StarList.insert(StarList.end(), Star);
@@ -51,9 +51,7 @@ XMLError TWorld::SaveToFile(char * filename)
 	pElement->SetText(TotalStars);
 	pRoot->InsertEndChild(pElement);
 
-	pElement = xmlDoc.NewElement("Stars");
-	StarList.WriteToXML(&xmlDoc, pElement);
-	pRoot->InsertEndChild(pElement);
+	StarList.WriteToXML(&xmlDoc, pRoot);
 
 
 
