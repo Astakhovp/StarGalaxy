@@ -25,7 +25,7 @@ class AVector : public vector <T>
 int main()
 {
 
-	GenerateParams* Params = new GenerateParams(40, 40);
+	GenerateParams* Params = new GenerateParams(33, 33);
 	Params->SaveToFile();
 
 	TWorld World;

@@ -17,9 +17,20 @@ TStar::TStar(TCoord GalaxySize)
 }
 
 using namespace tinyxml2;
-XMLError TStar::WriteToXML(XMLDocument *, XMLNode * ParentNode)
+XMLError TStar::WriteToXML(XMLDocument * xmlDoc, XMLNode * ParentNode)
 {
-	return XMLError();
+	XMLElement * pElement = xmlDoc->NewElement("Star");
+	ParentNode->InsertEndChild(pElement);
+
+	XMLElement * sElement = xmlDoc->NewElement("X");
+	sElement->SetText(Coord.x);
+	pElement->InsertEndChild(sElement);
+
+	sElement = xmlDoc->NewElement("Y");
+	sElement->SetText(Coord.y);
+	pElement->InsertEndChild(sElement);
+
+	return XML_SUCCESS;
 }
 
 XMLError TStarList::WriteToXML(XMLDocument * xmlDoc, XMLNode * ParentNode)
@@ -31,9 +42,7 @@ XMLError TStarList::WriteToXML(XMLDocument * xmlDoc, XMLNode * ParentNode)
 	for (int i = 0; i < size(); i++)
 	{
 		TStar &Star = at(i);
-		XMLElement * sElement = xmlDoc->NewElement("Star");
-		sElement->SetText(100);
-		pElement->InsertEndChild(sElement);
+		Star.WriteToXML(xmlDoc, pElement);
 	}
 
 	return XML_SUCCESS;
